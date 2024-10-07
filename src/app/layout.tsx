@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Epilogue } from 'next/font/google';
 import "./globals.css";
 import Image from "next/image";
+import Navbar from "@/components/layouts/Navbar";
 
 const epilogue = Epilogue({ subsets: ['latin'] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
       <body
         className={`${epilogue.className} relative overflow-x-hidden`}
       >
-        <div>Navbar</div>
+        <Navbar/>
         <main>
           <div className="w-full h-screen absolute top-0 -z-10"/>
           <div className="absolute w-2/3 h-screen top-0 right-0 -z-10">
