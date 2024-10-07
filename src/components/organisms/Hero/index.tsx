@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image";
 import React, {FC} from "react";
+import FormSearch from "../FormSearch";
 
 interface HeroProps{
 
@@ -18,6 +21,7 @@ const Hero: FC<HeroProps> = ({})=>{
           Greet platform for the job seeker that searching for <br />
           new career heights and passionate about startups.
         </div>
+        <FormSearch/>
       </div>
       <div className="block mt-2">
         <Image src="/images/hero.png" alt="hero" width={501} height={710} objectFit="contain"/>
