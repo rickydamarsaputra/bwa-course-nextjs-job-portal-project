@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Epilogue } from 'next/font/google';
 import "./globals.css";
+import Image from "next/image";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const epilogue = Epilogue({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +18,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${epilogue.className} relative overflow-x-hidden`}
       >
-        {children}
+        <div>Navbar</div>
+        <main>
+          <div className="w-full h-screen absolute top-0 -z-10"/>
+          <div className="absolute w-2/3 h-screen top-0 right-0 -z-10">
+            <Image src='/images/pattern.png' alt='pattern' fill/>
+          </div>
+          {children}
+        </main>
       </body>
     </html>
   );
